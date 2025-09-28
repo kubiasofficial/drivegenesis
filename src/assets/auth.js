@@ -41,8 +41,8 @@ if (loginForm) {
       alert('Přihlášení úspěšné!');
       window.location.href = 'main.html'; // Přesměrování na hlavní stránku
     } catch (error) {
-      if (error.code === 'auth/user-not-found') {
-        alert('Uživatel neexistuje.');
+      if (error.code === 'auth/user-not-found' || error.code === 'auth/invalid-credential') {
+        alert('Musíte se nejprve registrovat.');
       } else if (error.code === 'auth/wrong-password') {
         alert('Neplatné heslo.');
       } else if (error.code === 'auth/invalid-email') {
