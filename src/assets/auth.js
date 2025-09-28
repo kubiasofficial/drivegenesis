@@ -8,8 +8,11 @@ if (registerForm) {
     e.preventDefault();
     const email = document.getElementById('reg-email').value;
     const password = document.getElementById('reg-password').value;
+    const nickname = document.getElementById('reg-nick').value;
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      // Nastavíme přezdívku do profilu
+      await updateProfile(userCredential.user, { displayName: nickname });
       alert('Registrace úspěšná!');
       // Zde můžeš uložit další data do Firestore
     } catch (error) {
@@ -52,9 +55,9 @@ if (loginForm) {
 }
 
 // Změna profilu
-export async function updateUserProfile(displayName, photoURL) {
+export async function updateUserProfile(displayName) {
   if (auth.currentUser) {
-    await updateProfile(auth.currentUser, { displayName, photoURL });
+    await updateProfile(auth.currentUser, { displayName });
     alert('Profil upraven!');
   }
 }
