@@ -14,7 +14,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-export default async (req, res) => {
+module.exports = async (req, res) => {
   const { code } = req.query;
   if (!code) return res.status(400).send('Missing code');
 
