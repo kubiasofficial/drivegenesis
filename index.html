@@ -7,13 +7,7 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <h1>Vítejte!</h1>
-    <p>Vyberte si, zda jste nový nebo stávající uživatel:</p>
-    <form id="login-form" style="margin-bottom:2rem;">
-        <input type="email" id="email" placeholder="Email" required>
-        <input type="password" id="password" placeholder="Heslo" required>
-        <button type="submit" class="login-btn">Přihlásit se</button>
-      </form>
+    <!-- Úvodní text je nyní pouze v intro-container -->
       <div class="intro-container">
         <img src="./images/Drive Genesis.png" alt="Drive Genesis Logo" class="logo-animated">
         <h1 class="fade-in">Vítejte na Drive Genesis!</h1>
@@ -44,15 +38,6 @@
           document.getElementById('login-form').style.display = 'none';
         }
       </script>
-    <form id="login-form">
-      <input type="email" id="email" placeholder="Email" required>
-      <input type="password" id="password" placeholder="Heslo" required>
-      <button type="submit">Přihlásit se</button>
-    </form>
-    <form id="register-form">
-      <input type="email" id="reg-email" placeholder="Email" required>
-      <input type="password" id="reg-password" placeholder="Heslo" required>
-      <button type="submit">Registrovat</button>
-    </form>
+    <!-- Duplicitní formuláře odstraněny -->
   </body>
 </html>
