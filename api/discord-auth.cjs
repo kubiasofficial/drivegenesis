@@ -1,7 +1,6 @@
-// api/discord-auth.js
-import fetch from 'node-fetch';
-import { initializeApp } from 'firebase/app';
-import { getFirestore, setDoc, doc } from 'firebase/firestore';
+const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
+const { initializeApp } = require('firebase/app');
+const { getFirestore, setDoc, doc } = require('firebase/firestore');
 
 const firebaseConfig = {
   apiKey: "AIzaSyDLJeZVZqOorFqE5-__TJo8VIuyBOT0iFQ",
