@@ -8,7 +8,7 @@ window.saveProfile = async function() {
 
 window.onload = function() {
   // Firebase Auth může být asynchronní, proto použijeme listener
-  auth.onAuthStateChanged(function(user) {
+  window.auth.onAuthStateChanged(function(user) {
     if (user && user.displayName) {
       document.getElementById('profile-nick').textContent = user.displayName;
     } else {
