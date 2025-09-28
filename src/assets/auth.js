@@ -1,4 +1,4 @@
-import { auth } from './firebase.js';
+// import { auth } from './firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 // Registrace
@@ -10,9 +10,9 @@ if (registerForm) {
     const password = document.getElementById('reg-password').value;
     const nickname = document.getElementById('reg-nick').value;
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+  const userCredential = await createUserWithEmailAndPassword(window.auth, email, password);
       // Nastavíme přezdívku do profilu
-      await updateProfile(userCredential.user, { displayName: nickname });
+  await updateProfile(userCredential.user, { displayName: nickname });
       alert('Registrace úspěšná!');
       // Zde můžeš uložit další data do Firestore
     } catch (error) {
@@ -37,7 +37,7 @@ if (loginForm) {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     try {
-      const userCredential = await signInWithEmailAndPassword(auth, email, password);
+  const userCredential = await signInWithEmailAndPassword(window.auth, email, password);
       alert('Přihlášení úspěšné!');
       window.location.href = 'main.html'; // Přesměrování na hlavní stránku
     } catch (error) {
@@ -56,8 +56,8 @@ if (loginForm) {
 
 // Změna profilu
 export async function updateUserProfile(displayName) {
-  if (auth.currentUser) {
-    await updateProfile(auth.currentUser, { displayName });
+  if (window.auth.currentUser) {
+    await updateProfile(window.auth.currentUser, { displayName });
     alert('Profil upraven!');
   }
 }
