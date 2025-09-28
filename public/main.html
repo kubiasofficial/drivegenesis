@@ -6,6 +6,13 @@
     <title>Drive Genesis – Hlavní stránka</title>
     <link rel="stylesheet" href="./style.css" />
     <style>
+      body {
+        background: #181818;
+        color: #eebbc3;
+        font-family: 'Segoe UI', Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
       .main-header {
         display: flex;
         justify-content: flex-end;
@@ -16,10 +23,10 @@
         display: flex;
         align-items: center;
         gap: 1rem;
-        background: rgba(35,41,70,0.85);
+        background: #232946;
         border-radius: 16px;
         padding: 0.5rem 1.2rem;
-        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        box-shadow: 0 2px 12px rgba(0,0,0,0.18);
       }
       .profile-img {
         width: 48px;
@@ -27,6 +34,7 @@
         border-radius: 50%;
         object-fit: cover;
         border: 2px solid #eebbc3;
+        background: #181818;
       }
       .profile-nick {
         font-size: 1.2rem;
@@ -34,18 +42,58 @@
         color: #eebbc3;
       }
       .profile-edit {
-        background: #232946;
-        color: #eebbc3;
+        background: #eebbc3;
+        color: #232946;
         border: none;
         border-radius: 8px;
         padding: 0.4rem 1rem;
         font-size: 1rem;
         cursor: pointer;
         margin-left: 1rem;
+        transition: background 0.2s, color 0.2s;
       }
       .profile-edit:hover {
-        background: #eebbc3;
-        color: #232946;
+        background: #232946;
+        color: #eebbc3;
+        border: 1px solid #eebbc3;
+      }
+      main h2 {
+        color: #eebbc3;
+        text-shadow: 0 2px 8px #23294688;
+      }
+      #edit-profile-modal {
+        display: none;
+        position: fixed;
+        top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(24,24,24,0.85);
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+      #edit-profile-modal .modal-content {
+        background: #232946;
+        padding: 2rem;
+        border-radius: 16px;
+        min-width: 320px;
+        text-align: center;
+        box-shadow: 0 2px 16px #0008;
+      }
+      #edit-profile-modal input[type="text"] {
+        margin-bottom: 1rem;
+        padding: 0.5rem;
+        width: 80%;
+        border-radius: 8px;
+        border: 1px solid #eebbc3;
+        background: #181818;
+        color: #eebbc3;
+      }
+      #edit-profile-modal input[type="file"] {
+        margin-bottom: 1rem;
+        color: #eebbc3;
+      }
+      #edit-profile-modal h3 {
+        color: #eebbc3;
+        margin-bottom: 1rem;
       }
     </style>
   </head>

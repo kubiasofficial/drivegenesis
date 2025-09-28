@@ -1,0 +1,108 @@
+body {
+  background: #181818;
+  color: #fff;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.profile-bar {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  background: #232323;
+  border-radius: 16px;
+  padding: 16px 32px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 16px #0006;
+}
+
+.profile-bar img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  margin-right: 16px;
+  object-fit: cover;
+  background: #333;
+}
+
+.profile-bar .nickname {
+  font-weight: bold;
+  margin-right: 24px;
+}
+
+#edit-profile-btn {
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#edit-profile-btn:hover {
+  background: #444;
+}
+
+#profile-modal {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: #000a;
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
+}
+
+#profile-modal .modal-content {
+  background: #232323;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 2px 16px #0008;
+  min-width: 320px;
+}
+
+#profile-modal label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+#profile-modal input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background: #181818;
+  color: #fff;
+}
+
+#close-modal-btn {
+  background: #3a3a3a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+#save-profile-btn {
+  background: #0078d4;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+#save-profile-btn:hover {
+  background: #005fa3;
+}
