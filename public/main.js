@@ -1,5 +1,3 @@
-import { auth, db } from '../src/assets/firebase.js';
-import { updateUserProfile } from '../src/assets/auth.js';
 
 window.saveProfile = async function() {
   const nickname = document.getElementById('edit-nick').value;
