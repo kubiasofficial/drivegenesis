@@ -1,7 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
-
+// Firebase inicializace pro CDN (použij v HTML <script src="https://www.gstatic.com/firebasejs/10.7.2/firebase-app.js"></script> atd.)
 const firebaseConfig = {
   apiKey: "AIzaSyDLJeZVZqOorFqE5-__TJo8VIuyBOT0iFQ",
   authDomain: "drivegenesis-4d18e.firebaseapp.com",
@@ -11,6 +8,6 @@ const firebaseConfig = {
   appId: "1:734857047849:web:4545c735b306b093419138"
 };
 
-const app = initializeApp(firebaseConfig);
-window.db = getFirestore(app);
-window.auth = getAuth(app);
+firebase.initializeApp(firebaseConfig);
+window.auth = firebase.auth();
+window.db = firebase.firestore();
