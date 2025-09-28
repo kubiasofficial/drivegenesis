@@ -1,7 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
+import { auth } from './firebase.js';
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 
 // Registrace
@@ -16,7 +13,15 @@ if (registerForm) {
       alert('Registrace úspěšná!');
       // Zde můžeš uložit další data do Firestore
     } catch (error) {
-      alert(error.message);
+      if (error.code === 'auth/email-already-in-use') {
+        alert('Tento účet je již registrován.');
+      } else if (error.code === 'auth/invalid-email') {
+        alert('Neplatný email.');
+      } else if (error.code === 'auth/weak-password') {
+        alert('Heslo je příliš slabé (min. 6 znaků).');
+      } else {
+        alert(error.message);
+      }
     }
   };
 }
@@ -31,9 +36,17 @@ if (loginForm) {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       alert('Přihlášení úspěšné!');
-      // Zobrazit hlavní stránku s profilem
+      window.location.href = 'main.html'; // Přesměrování na hlavní stránku
     } catch (error) {
-      alert(error.message);
+      if (error.code === 'auth/user-not-found') {
+        alert('Uživatel neexistuje.');
+      } else if (error.code === 'auth/wrong-password') {
+        alert('Neplatné heslo.');
+      } else if (error.code === 'auth/invalid-email') {
+        alert('Neplatný email.');
+      } else {
+        alert(error.message);
+      }
     }
   };
 }
