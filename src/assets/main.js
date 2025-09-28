@@ -1,4 +1,4 @@
-import { auth } from './firebase.js';
+import { auth } from '../../public/firebase.js';
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import { onAuthStateChanged, updateProfile } from "firebase/auth";
 
