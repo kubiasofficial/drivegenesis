@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #181818 60%, #232946 100%);
+  font-family: 'Segoe UI', Arial, sans-serif;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.intro-container {
+  background: rgba(35,41,70,0.95);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+  padding: 3rem 2rem 2.5rem 2rem;
+  text-align: center;
+  min-width: 340px;
+  max-width: 400px;
+  animation: fadeInUp 1s ease;
+}
+
+.logo-animated {
+  width: 120px;
+  margin-bottom: 1.5rem;
+  animation: logoBounce 1.2s infinite alternate;
+}
+
+@keyframes logoBounce {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-18px); }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.button-group {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.login-btn, .register-btn {
+  background: linear-gradient(90deg, #121629 60%, #232946 100%);
+  color: #eebbc3;
+  border: none;
+  border-radius: 8px;
+  padding: 0.8rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  transition: background 0.2s, color 0.2s, transform 0.2s;
+}
+.login-btn:hover, .register-btn:hover {
+  background: #eebbc3;
+  color: #232946;
+  transform: scale(1.07);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+form input {
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  background: #181818;
+  color: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+form button {
+  margin-top: 0.5rem;
+}
+
+@media (min-width: 900px) {
+  .intro-container { max-width: 480px; }
+  .logo-animated { width: 140px; }
+  h1 { font-size: 2.7rem; }
+  p { font-size: 1.3rem; }
+  .login-btn, .register-btn { font-size: 1.2rem; }
+}
