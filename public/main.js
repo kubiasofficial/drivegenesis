@@ -7,7 +7,12 @@ window.saveProfile = async function() {
 }
 
 window.onload = function() {
-  if (auth.currentUser) {
-    document.getElementById('profile-nick').textContent = auth.currentUser.displayName || 'Uživatel';
-  }
+  // Firebase Auth může být asynchronní, proto použijeme listener
+  auth.onAuthStateChanged(function(user) {
+    if (user && user.displayName) {
+      document.getElementById('profile-nick').textContent = user.displayName;
+    } else {
+      document.getElementById('profile-nick').textContent = 'Uživatel';
+    }
+  });
 }
