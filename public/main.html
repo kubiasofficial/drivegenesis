@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Drive Genesis – Hlavní stránka</title>
   <link rel="stylesheet" href="./style.css" />
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <!-- Firebase scripts moved to the end of the body -->
     <style>
       body {
         background: #181818;
@@ -108,16 +106,19 @@
         <button onclick="closeEditProfile()" class="profile-edit" style="background:#eebbc3; color:#232946;">Zavřít</button>
       </div>
     </div>
-  <script src="../src/assets/firebase.js"></script>
-  <script src="../src/assets/auth.js"></script>
-  <script src="main.js"></script>
-    <script>
-      function showEditProfile() {
-        document.getElementById('edit-profile-modal').style.display = 'flex';
-      }
-      function closeEditProfile() {
-        document.getElementById('edit-profile-modal').style.display = 'none';
-      }
-    </script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+     <script src="../src/assets/firebase.js"></script>
+     <script src="../src/assets/auth.js"></script>
+     <script src="main.js"></script>
+     <script>
+       function showEditProfile() {
+         document.getElementById('edit-profile-modal').style.display = 'flex';
+       }
+       function closeEditProfile() {
+         document.getElementById('edit-profile-modal').style.display = 'none';
+       }
+     </script>
   </body>
 </html>
