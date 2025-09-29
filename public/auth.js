@@ -78,3 +78,17 @@ window.updateUserProfile = function(displayName) {
       alert('Chyba při úpravě profilu: ' + error.message);
     });
 }
+// Změna profilu - ponechte vně, pokud chcete, aby byla dostupná globálně
+window.updateUserProfile = function(displayName) {
+  if (!window.auth || !window.auth.currentUser) {
+    alert('Chyba: Uživatel není přihlášen nebo Firebase Auth není inicializováno.');
+    return;
+  }
+  window.auth.currentUser.updateProfile({ displayName: displayName })
+    .then(function() {
+      alert('Profil upraven!');
+    })
+    .catch(function(error) {
+      alert('Chyba při úpravě profilu: ' + error.message);
+    });
+}
