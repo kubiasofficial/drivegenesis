@@ -129,7 +129,7 @@
     <header class="main-header">
       <div class="profile">
         <span class="profile-nick" id="profile-nick">Uživatel</span>
-        <button class="profile-edit" onclick="showEditProfile()">Upravit profil</button>
+        <button class="profile-edit" onclick="showProfile()">Profil</button>
       </div>
     </header>
     <main>
@@ -143,11 +143,9 @@
     </main>
     <div id="edit-profile-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
       <div style="background:#232946; padding:2rem; border-radius:16px; min-width:320px; text-align:center;">
-        <h3>Upravit profil</h3>
-        <input type="text" id="edit-nick" placeholder="Nová přezdívka" style="margin-bottom:1rem; padding:0.5rem; width:80%;">
-        <br>
-        <button onclick="saveProfile()" class="profile-edit">Uložit změny</button>
-        <button onclick="closeEditProfile()" class="profile-edit" style="background:#eebbc3; color:#232946;">Zavřít</button>
+        <h3>Profil</h3>
+        <div id="profile-points" style="margin-bottom:1.5rem; font-size:1.2rem; color:#eebbc3;">Počet bodů: <span id="points-value">0</span></div>
+        <button onclick="closeProfile()" class="profile-edit" style="background:#eebbc3; color:#232946;">Zavřít</button>
       </div>
     </div>
      <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
@@ -157,10 +155,10 @@
   <script src="auth.js"></script>
      <script src="main.js"></script>
      <script>
-       function showEditProfile() {
+       function showProfile() {
          document.getElementById('edit-profile-modal').style.display = 'flex';
        }
-       function closeEditProfile() {
+       function closeProfile() {
          document.getElementById('edit-profile-modal').style.display = 'none';
        }
      </script>
